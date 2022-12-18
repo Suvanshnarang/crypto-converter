@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <script src="{% static 'index.js' %}"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CURRENY CONVERTOR</h1>
+    <form action="{% url 'index' %}" method="post">
+        <div class="p">
+  
+            <input class="er" name="bitc" type="text" id="z" placeholder={{data1}} 
+                style="margin-bottom: 10px; padding: 4px; " important>
+    
+        </div>
+        <select name="country"> 
+            <option selected disabled>--Select City--</option>
+            {% for i in response1 %}
+            <option value={{i}}>{{i}}</option>
+            {% endfor %}
+    
+        </select> 
+        <Button type='submit'  >submit</Button>
+    </form>
+
+    <div class="p">
+       
+        <input class="er" type="text" value="" id="z1" placeholder={{data}} name="answer"
+            style="margin-bottom: 10px; padding: 4px; " important type="hidden">
+    </div>
+</body>
+
+</html>
